@@ -5,16 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapaNativoComponent } from './components/mapa-nativo/mapa-nativo.component';
 import { MapaLibreriaComponent } from './components/mapa-libreria/mapa-libreria.component';
-
+import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule } from "@angular/common/http";
+import { InicioComponent } from './components/inicio/inicio.component';
 @NgModule({
   declarations: [
     AppComponent,
     MapaNativoComponent,
-    MapaLibreriaComponent
+    MapaLibreriaComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: ''
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

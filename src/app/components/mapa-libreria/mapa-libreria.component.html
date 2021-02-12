@@ -1,1 +1,9 @@
-<p>mapa-libreria works!</p>
+<agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="17" [fitBounds]="true">
+    <agm-marker [latitude]="latitud" [longitude]="longitud" [markerDraggable]="true"></agm-marker>
+    <agm-marker *ngFor="let pais of paises" [agmFitBounds]="true" [iconUrl]="{url: pais.flag, scaledSize: {width: 30, height: 15}}" [latitude]="pais.latlng[0]" [longitude]="pais.latlng[1]">
+        <agm-info-window>
+            <h3>{{pais.translations.es}}</h3>
+        </agm-info-window>
+    </agm-marker>
+
+</agm-map>
